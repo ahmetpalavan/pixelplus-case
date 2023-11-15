@@ -1,21 +1,6 @@
 import { useQuery, UseQueryResult } from "react-query";
 import axios from "axios";
-
-interface User {
-  id: number;
-  email: string;
-  first_name: string;
-  last_name: string;
-  avatar: string;
-}
-
-interface ApiResponse {
-  page: number;
-  per_page: number;
-  total: number;
-  total_pages: number;
-  data: User[];
-}
+import { ApiResponse } from "@/types";
 
 export const useUsers = (page: number): UseQueryResult<ApiResponse, Error> => {
   return useQuery<ApiResponse, Error>(["users", page], async () => {
@@ -23,3 +8,4 @@ export const useUsers = (page: number): UseQueryResult<ApiResponse, Error> => {
     return data;
   });
 };
+

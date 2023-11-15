@@ -7,7 +7,7 @@ const UserCard = ({ user }: any) => {
   const router = useRouter();
 
   const handleUserDetails = () => {
-    router.push(`/user/user-detail/${user.id}`);
+    router.push(`/user/${user.id}`);
   };
 
   return (
