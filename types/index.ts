@@ -13,3 +13,15 @@ export interface ApiResponse {
   total_pages: number;
   data: User[];
 }
+
+export interface IFormInput {
+  name: string;
+  job: string;
+}
+
+export interface IUserResponse {
+  id: string;
+  name: string;
+  job: string;
+  createdAt: string;
+}

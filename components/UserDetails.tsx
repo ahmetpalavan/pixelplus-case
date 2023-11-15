@@ -1,31 +1,20 @@
 "use client";
 
-import Loading from "@/components/Loading";
-import axios from "axios";
-import React from "react";
-import { useQuery } from "react-query";
 import styles from "@/app/styles/variables.module.scss";
+import Loading from "@/components/Loading";
+import { useUserDetail } from "@/hooks/queries";
+import React from "react";
 import ErrorComponent from "./Error";
-
-interface UserDetail {
-  id: number;
-  email: string;
-  first_name: string;
-  last_name: string;
-  avatar: string;
-}
 
 interface UserDetailsProps {
   id: number;
 }
 
 const UserDetails: React.FC<UserDetailsProps> = ({ id }) => {
-  const { data, isLoading, isError } = useQuery<UserDetail, Error>(["userDetails", id], async () => {
-    const response = await axios.get(`https://reqres.in/api/users/${id}`);
-    return response.data.data;
-  });
+  const { data, isLoading, isError } = useUserDetail(id);
 
   if (isLoading) {
+    setTimeout(() => {}, 3000);
     return <Loading size={150} color="#123abc" />;
   }
 
