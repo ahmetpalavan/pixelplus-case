@@ -1,0 +1,338 @@
+$primary-color: #748efc;
+$secondary-color: #3b4d9a;
+$text-primary: #191b2c;
+$text-secondary: #8599a8;
+$border-radius: 10px;
+$box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+$font-primary: "Roboto", sans-serif;
+
+@mixin button-styles($color, $shadow) {
+  background-color: $color;
+  box-shadow: $shadow;
+  color: #ffffff;
+  transition:
+    background-color 0.3s,
+    box-shadow 0.3s;
+  &:hover {
+    background-color: darken($color, 10%);
+    box-shadow: 0px 8px 25px rgba($color, 0.5);
+  }
+  &:active {
+    background-color: darken($color, 15%);
+    box-shadow: 0px 3px 15px rgba($color, 0.6);
+  }
+}
+
+.main {
+  width: 100%;
+  height: 100%;
+  .header {
+    transition: height 0.3s ease-in-out;
+    width: 100%;
+    height: 113px;
+    background: linear-gradient(90deg, $primary-color 0%, $secondary-color 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #ffffff;
+    font-family: $font-primary;
+    opacity: 1;
+  }
+  .headerTitle {
+    top: 38px;
+    left: 567px;
+    width: 306px;
+    height: 38px;
+    font: var(--unnamed-font-style-normal) normal 900 32px/40px Roboto;
+    text-align: center;
+    font: normal normal 900 32px/40px Roboto;
+    letter-spacing: 0.1px;
+    color: #ffffff;
+    opacity: 1;
+  }
+  .mainContent {
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+  .subheaderContent {
+    margin-top: 50px;
+    padding-left: 10%;
+    padding-right: 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .membersTitle {
+    font-size: 24px;
+    color: $text-primary;
+    margin: 20px 0;
+  }
+
+  .cardsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 20px;
+  }
+
+  .memberCard {
+    width: 350px;
+    height: 400px;
+    background: #ffffff 0% 0% no-repeat padding-box;
+    box-shadow: 0px 10px 25px #00000008;
+    border-radius: 10px;
+    opacity: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .avatar {
+    width: 115px;
+    height: 115px;
+    border-radius: 50%;
+    background-size: cover;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.29);
+    margin-top: 20px;
+  }
+
+  .name {
+    margin-top: 39px;
+    font-weight: bold;
+    font-size: 22px;
+    color: $text-primary;
+    margin-bottom: 10px;
+  }
+
+  .email {
+    font-size: 18px;
+    color: $text-secondary;
+    margin-bottom: 20px;
+  }
+
+  .reviewButton {
+    margin-top: 23px;
+    width: 177px;
+    height: 53px;
+    border: 1px solid #8599a8;
+    border-radius: 5px;
+    background: transparent;
+    box-shadow: none;
+    color: $text-primary;
+    font-family: $font-primary;
+    font-size: 18px;
+    cursor: pointer;
+    transition:
+      background-color 0.3s,
+      box-shadow 0.3s,
+      border 0.3s;
+
+    &:hover,
+    &:focus {
+      background: #748efc;
+      box-shadow: 0px 5px 20px #748efc80;
+      border: none;
+    }
+  }
+
+  @mixin button-styles($color, $shadow) {
+    transition:
+      background-color 0.3s,
+      box-shadow 0.3s;
+    &:hover {
+      background-color: darken($color, 10%);
+      box-shadow: 0px 8px 25px rgba($color, 0.5);
+    }
+    &:active {
+      background-color: darken($color, 15%);
+      box-shadow: 0px 3px 15px rgba($color, 0.6);
+    }
+  }
+
+  .pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 4%;
+    margin-bottom: 5%;
+
+    .pagination_button {
+      width: 40px;
+      height: 40px;
+      line-height: 40px;
+      border: 1px solid $secondary-color;
+      border-radius: 50%;
+      text-align: center;
+      margin: 0 5px;
+      cursor: pointer;
+      background-color: #fff;
+      color: $secondary-color;
+
+      &.active {
+        background-color: $primary-color;
+        color: #ffffff;
+      }
+
+      &:hover {
+        background-color: lighten($primary-color, 10%);
+      }
+      &.pagination_button_active {
+        background-color: $primary-color;
+        color: #ffffff;
+      }
+      &.disabled {
+        cursor: not-allowed;
+        opacity: 0.5;
+      }
+    }
+  }
+  .button {
+    background-color: #ffffff;
+    border: 1px solid #8599a8;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #333333;
+    text-align: center;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    transition: background-color 0.3s;
+    border-radius: 4px;
+  }
+
+  .button:hover {
+    background: #748efc;
+  }
+
+  .button:active {
+    background: #748efc;
+    color: #ffffff;
+  }
+
+  .footer {
+    width: 100%;
+    height: 74px;
+    background: #040404;
+    opacity: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .container {
+    flex-direction: column;
+    text-align: center;
+    color: #fff;
+  }
+}
+//Loading Komponenti
+.spinnerContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+// Modal Komponenti
+
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(10px);
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999; 
+}
+.modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+
+  .modalContent {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 500px;
+    max-width: 80%;
+    margin: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      .imageUploadContainer {
+        border: 1px dashed #ccc;
+        padding: 10px;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 200px;
+        cursor: pointer;
+        background-image: url("data:image/svg+xml;base64,[BASE64 ENCODED SVG OF PLUS SIGN]");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: 30px 30px;
+      }
+
+      input[type="text"],
+      input:not([type]) {
+        height: 40px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        padding: 0 10px;
+      }
+
+      .buttonContainer {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        gap: 10px;
+
+        button {
+          flex: 1;
+          background-color: #ffc107;
+          color: #000;
+          flex-grow: 1;
+          flex-basis: auto;
+          padding: 10px 14px;
+          max-width: 140px;
+          border: none;
+          border-radius: 4px;
+          cursor: pointer;
+          margin-top: 10px;
+          &:hover {
+            background-color: darken(#ffc107, 5%);
+          }
+          &:not(:last-child) {
+            margin-right: 10px;
+          }
+        }
+
+        button[type="submit"] {
+          background-color: #007bff;
+          color: white;
+          &:hover {
+            background-color: darken(#007bff, 5%);
+          }
+        }
+      }
+    }
+  }
+}
